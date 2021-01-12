@@ -1,0 +1,3 @@
+En ésta carpeta irá todo lo relacionado con css y estilos de la página
+
+Archivo creado porque el git no deja subir las carpetas vacías
