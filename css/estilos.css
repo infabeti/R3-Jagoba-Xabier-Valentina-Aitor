@@ -33,6 +33,7 @@ a {
 
 a:focus, a:hover{
 	color:#e09f66;
+	text-decoration: none;
 }
 
 .clearfix:after {
@@ -106,6 +107,38 @@ h2{
 }
 .cont_servicios h2 {
     text-align: center;
+}
+.container.contenido3 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.destacadoCarta{
+	background-image: url(../imagenes/fondoCarta.jpg);
+	width: 100%;
+	/* height: 300px; */
+	background-attachment: fixed;
+}
+
+.btnRestaurantes {
+  height: 234px;
+  /*IMPORTANTE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnRestaurantes a{
+    border-radius: 50px;
+    background: #170a01;
+    width: 379px;
+    padding: 28px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.btnRestaurantes a:hover {
+    background: #562706;
 }
 /*--------------ETIQUETA ARTICLE---------------*/
 .articulos  {
@@ -224,8 +257,24 @@ p.titulo_art {
 footer {
     background: #170e0d;
     color: white;
+    padding-top: 50px;
 }
 
+.address ul li {
+    list-style: none;
+}
+
+.address ul {
+    padding: 0px;
+}
+
+.address ul h5 {
+    font-size: 18px;
+    color: #e3c1a9;
+}
+footer a {
+    color: #e3c1a9;
+}
 
 @media (max-width: 576px) { 
 
