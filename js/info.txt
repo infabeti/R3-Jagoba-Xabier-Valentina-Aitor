@@ -1,1 +1,0 @@
-Carpeta donde se guardarán todo lo relacionado con JavaScript

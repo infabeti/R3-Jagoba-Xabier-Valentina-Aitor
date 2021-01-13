@@ -1,3 +1,0 @@
-Carpeta donde se guardarán los videos que se usarán en la web
-
-Archivo creado porque el git no deja subir las carpetas vacías
