@@ -20,6 +20,10 @@ web.get('/index.html',(request,response)=> {
 	response.sendFile(path.resolve(__dirname,'index.html'))
 })
 
+web.get('/bares.html',(request,response)=> {
+	response.sendFile(path.resolve(__dirname,'bares.html'))
+})
+
 web.get('/restaurantes.html',(request,response)=> {
 	response.sendFile(path.resolve(__dirname,'restaurantes.html'))
 })
@@ -28,4 +32,6 @@ web.get('/contacto.html',(request,response)=> {
 	response.sendFile(path.resolve(__dirname,'contacto.html'))
 })
 
-
+web.get('/contacto.html',(request,response)=> {
+	response.sendFile(path.resolve(__dirname,'bares.html'))
+})

@@ -83,6 +83,10 @@ h2{
     color: #251714;
     font-size: 60px;
 }
+.banner img {
+    width: 100%;
+    height: auto;
+}
 /*----------------CONTENIDO HOME--------------*/
 
 .container.contenido1 {
@@ -92,9 +96,10 @@ h2{
 .texto1{
     text-align: center;
 }
-.col-md-6.img-right img {
+.img-right img {
     width: 100%;
     height: auto;
+    margin-top: 30px;
 }
 
 .row.contenido2row {
@@ -137,7 +142,7 @@ h2{
     font-size: 20px;
 }
 
-.btnRestaurantes a:hover {
+.btnRestaurantes a:hover, .btn_menu:hover {
     background: #562706;
 }
 /*--------------ETIQUETA ARTICLE---------------*/
@@ -252,7 +257,153 @@ p.titulo_art {
     padding: 30px 0px 60px;
 }
 
+ .btn_menu{
+    border-radius: 50px;
+    background: #170a01;
+    width: 379px;
+    padding: 9px 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-top: 30px;
+}
+.btn_menu a {
+    color: white;
+}
+ /*-----------CARTA-----------*/
+.group_menu {
+    background-color: #fbf3f3;
+    padding: 30px 20px 20px;
+    /* width: 49%; */
+    margin: 30px 0px 20px;
+    /* float: left; */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: #797979;
+}
+.main_title {
+    font-size: 28px;
+    line-height: 24px;
+    margin-bottom: 23px;
+}
+.menu_wrapper {
+    margin-bottom: 15px;
+}
+.menu_data {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    min-height: 26px;
+    list-style: none;
+}
+.menu_meal.with_price {
+    border-bottom: 2px dotted #c8c6c6;
+    margin-top: -12px;
+    padding-right: 50px;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.menu_meal.with_price .meal_name,  .menu_meal.with_price .price {
+    background-color: #fbf3f3;
+    position: relative;
+    top: 5px;
+}
+ .menu_meal.with_price .price {
+    font-weight: 400;
+    position: absolute;
+    text-align: right;
+    right: 0;
+    bottom: -6px;
+    top: auto;
+    padding: 0 0 1px 5px;
+}
+ /*-----------END CARTA-----------*/
+ /*-----------FORMULARIO DE CONTACTO-----------*/
+ .datos_contacto2{
+    text-align: center;
+}
+.datos_contacto2 ul li:before{
+   display: inline-block;
+   font: normal normal normal 14px/1 FontAwesome;
+   font-size: 25px;
+   text-rendering: auto;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   /* margin-right: 13px; */
+}
 
+.datos_contacto2 ul li:nth-child(1):before {
+   content: "\f041";
+   padding-right: 10px;
+   color: #8a4001;
+}
+.datos_contacto2 ul li:nth-child(2):before {
+   content: "\f095";
+   padding-right: 10px;
+   color: #105a6b;
+}
+.datos_contacto2 ul li {
+   margin-right: 40px;
+   font-size: 20px;
+}
+
+.datos_contacto2 h3 {
+   color: #633107;
+   font-size: 31px;
+}
+
+
+label {
+   display:block;
+   margin-top:20px;
+   letter-spacing:1px;
+   text-transform: uppercase;
+}
+
+.principal {
+   display:block;
+   margin:0 auto;
+   width:510px;
+   color: #666666;
+   font-family:Arial;
+}
+
+form {
+   margin:0 auto;
+   width: 800px;
+}
+
+input, textarea {
+   width: 100%;
+   height:27px;
+   background: #e6eff1;
+   border: 1px solid #e2e2e2;
+   border-radius: 10px;
+   padding:10px;
+   margin-top:5px;
+   font-size: 18px;
+   color: #020202;
+}
+
+textarea {
+   height:150px;
+}
+
+#submit {
+   width: 162px;
+   height: 53px;
+   border:none;
+   margin: 20px 0px;
+   cursor:pointer;
+   background: #482609;
+   color: white;
+}
+
+/*-----------END FORMULARIO DE CONTACTO-----------*/
 /*FOOTER*/
 footer {
     background: #170e0d;
