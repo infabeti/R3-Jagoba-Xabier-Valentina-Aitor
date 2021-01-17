@@ -145,6 +145,16 @@ h2{
 .btnRestaurantes a:hover, .btn_menu:hover {
     background: #562706;
 }
+.btn_bar a{
+    background: #170a01;
+    border-radius: 17px;
+    padding: 6px 10px;
+    color: wheat;
+}
+.btn_bar {
+    padding: 10px;
+    text-align: center;
+}
 /*--------------ETIQUETA ARTICLE---------------*/
 .articulos  {
     width: 31%;
@@ -321,6 +331,9 @@ p.titulo_art {
     top: auto;
     padding: 0 0 1px 5px;
 }
+.columnaCarta {
+    margin-top: 50px;
+}
  /*-----------END CARTA-----------*/
  /*-----------FORMULARIO DE CONTACTO-----------*/
  .datos_contacto2{
@@ -433,8 +446,4 @@ footer a {
 		width: 100%;
 	} 
 }
-
-
-
-
 

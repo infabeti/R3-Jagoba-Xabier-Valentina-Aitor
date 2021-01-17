@@ -28,10 +28,12 @@ web.get('/restaurantes.html',(request,response)=> {
 	response.sendFile(path.resolve(__dirname,'restaurantes.html'))
 })
 
+web.get('/cafeterias.html',(request,response)=> {
+	response.sendFile(path.resolve(__dirname,'cafeterias.html'))
+})
+
 web.get('/contacto.html',(request,response)=> {
 	response.sendFile(path.resolve(__dirname,'contacto.html'))
 })
 
-web.get('/contacto.html',(request,response)=> {
-	response.sendFile(path.resolve(__dirname,'bares.html'))
-})
+
