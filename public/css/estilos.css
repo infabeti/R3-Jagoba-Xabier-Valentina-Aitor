@@ -145,11 +145,12 @@ h2{
 .btnRestaurantes a:hover, .btn_menu:hover {
     background: #562706;
 }
-.btn_bar a{
+.btn_bar div{
     background: #170a01;
     border-radius: 17px;
     padding: 6px 10px;
     color: wheat;
+    cursor: pointer;
 }
 .btn_bar {
     padding: 10px;
