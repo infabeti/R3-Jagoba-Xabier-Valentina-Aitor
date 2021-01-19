@@ -3,6 +3,13 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="Hosteleria San ignacio">
 	<title>Hosteleria San ignacio reto2 </title>
+	<script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+	crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+	crossorigin=""></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&amp;display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
@@ -12,8 +19,49 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/estilos.css" rel="stylesheet">
     <link href="css/bootsnav.css" rel="stylesheet">
+	<style>
+	.carta{
+		display:none;
+	}
+	</style>
     <!-- ========== End Estilo ========== -->
 
+	 <!-- ========== JS ========== -->
+	<script>
+	var oculto=true;
+	function mostrar(numero) {
+		var nombre = 'carta'+numero;
+		
+		
+		if(oculto==true){
+			document.getElementById(nombre).style.display = 'block';
+			oculto=false;
+		}else{
+			document.getElementById(nombre).style.display = 'none';
+			oculto=true;
+		}
+	}
+	
+	
+	function geolocalizacion(coord1,coord2,nombre,dir,div) {
+		$("#"+div).css({"width":"400px","height":"400px"});
+		var mapa = L.map(div).setView([coord1,coord2], 17);
+		var nom=$("#"+nombre).html();
+		var direccion=$("#"+dir).html();
+
+		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+			maxZoom: 23,
+			id: 'mapbox/streets-v11',
+			tileSize: 512,
+			zoomOffset: -1,
+			accessToken: 'pk.eyJ1IjoiamFnb2JhIiwiYSI6ImNrazAxZTRiZzBjdncyeHJ1ZWtxOHY2N2gifQ.FvyM_hcjCIdgCliCYu2ftw'
+		}).addTo(mapa);
+		var marker = L.marker([coord1,coord2]).addTo(mapa);
+		marker.bindPopup("<b>"+nom+"</b><br>"+direccion).openPopup();
+}
+	</script>
+	<!-- ========== End JS ========== -->
 </head>
 
 
@@ -64,8 +112,10 @@
         <h1>Restaurantes en San Ignacio</h1>
             <div class="col-md-6 col-sm-12">
                     
-                      <h2>Gazteleku Berria</h2> <br/>
-                      <p><b>Direccion:</b> Oñatiko Unibertsitarearen Kalea, nº9, 48015 Bilbo, Bizkaia</p>
+                      <h2 id="rest1">Gazteleku Berria</h2> <br/>
+                      <p id="dir1"><b>Direccion:</b> Oñatiko Unibertsitarearen Kalea, nº9, 48015 Bilbo, Bizkaia</p>
+					  <button class="btn_menu" onclick="geolocalizacion('43.280638993908106','-2.9627288655503707','rest1','dir1','mapa1')">Ver mapa</button><br/><br/>
+					  <div id="mapa1"></div><br/>
                     
             <table>			  
               <tr>
@@ -94,7 +144,7 @@
             
 
             <div class="btn_menu">
-              <a href="" >Ver la carta</a>
+              <div onclick="mostrar('1');">Mostrar/Ocultar carta</div>
               </div>
             </div>
             <div class="col-md-6 col-sm-12 img-right">
@@ -102,8 +152,7 @@
               <img src="imagenes/GazteluBerria.png" alt="">
             
             </div>
-            <div class="col-md-12 carta">
-
+            <div class="carta" id="carta1">
               <div class="main_column">
               <div id="-Entrantes-" class="group_menu">
                  <h3 class="main_title">"Entrantes"</h3>
@@ -189,9 +238,8 @@
                   </li>
                   </ul>
                 </div>
-              </div>
-            </div>  
-   
+              </div>  
+		</div>
 	  </div>
   </div>
   </div>
@@ -209,9 +257,11 @@
 			  </div>
 			  <div class="col-md-6 col-sm-12">
 			   
-				  <h2>Sidrería - Cervecera Ander</h2>
+				  <h2 id="rest2">Sidrería - Cervecera Ander</h2>
 
-				  <p><b>Direccion:</b> Andalucía, Andaluzia Kalea, 1, 48015 Bilbao, Vizcaya</p> <br/>
+				  <p id="dir2"><b>Direccion:</b> Andalucía, Andaluzia Kalea, 1, 48015 Bilbao, Vizcaya</p>
+				   <button class="btn_menu" onclick="geolocalizacion('43.282848','-2.96474','rest2','dir2','mapa2')">Ver mapa</button><br/><br/>
+					  <div id="mapa2"></div><br/>
 				  <table>			  
             <tr>
               <th scope="row">Día</th>
@@ -237,11 +287,11 @@
 	      <p>En la zona de mayor desarrollo en Bilbao, a un paso del metro, con unas vistas inmejorables de la ría, se halla nuestro restaurante Sidrería Ander, un lugar donde la comida es un placer y se puede disfrutar en un ambiente familiar y tranquilo.</p>
 				  
         <div class="btn_menu">
-          <a href="" >Ver la carta</a>
+          <div onclick="mostrar('2');">Mostrar/Ocultar carta</div>
           </div>
        
 			  </div>
-        <div class="col-md-12 carta">
+        <div class="carta" id="carta2">
 
           <div class="main_column">
           <div id="-Entrantes-" class="group_menu">
@@ -341,8 +391,11 @@
 		  <div class="col-md-12">
 			  <div class="col-md-6 col-sm-12">
 			   
-				  <h2>Bar Serapio</h2> <br/>
-				  <p><b>Direccion:</b> Enekuri Bidea, 1, 48950 Erandio, Bizkaia</p>
+				  
+				  <h2 id="rest3">Bar Serapio</h2> <br/>
+				  <p id="dir3"><b>Direccion:</b> Enekuri Bidea, 1, 48950 Erandio, Bizkaia</p>
+				  <button class="btn_menu" onclick="geolocalizacion('43.291943','-2.960881','rest3','dir3','mapa3')">Ver mapa</button><br/><br/>
+					  <div id="mapa3"></div><br/>
 				 
           <table>			  
             <tr>
@@ -367,10 +420,9 @@
             </tr>
           </table> </br>
 	      <p>Es un sitio agradable donde poder comer y tomar algo y relajarse en sus terrazas exteriores.</p>
-        <p>Falta Poner el mapa etc</p>
         
         <div class="btn_menu">
-          <a href="" >Ver la carta</a>
+           <div onclick="mostrar('3');">Mostrar/Ocultar carta</div>
         </div>
        
         
@@ -380,7 +432,7 @@
 			     <img src="imagenes/Serapio.jpg" alt="">
 				
         </div>
-        <div class="col-md-12 carta">
+        <div class="carta" id="carta3">
 
           <div class="main_column">
           <div id="-Entrantes-" class="group_menu">
@@ -485,10 +537,12 @@
 				
 			  </div>
 			  <div class="col-md-6 col-sm-12">
-			   
-         <h2>Restaurante Goikar</h2>
-          
-				  <p><b>Direccion:</b> Agirre Lehendakariaren Etorb., 186, 48015 Bilbo, Bizkaia</p> <br/>
+
+				<h2 id="rest4">Restaurante Goikar</h2>
+				
+				<p id="dir4"><b>Direccion:</b> Agirre Lehendakariaren Etorb., 186, 48015 Bilbo, Bizkaia</p>
+				   <button class="btn_menu" onclick="geolocalizacion('43.281758','-2.962979','rest4','dir4','mapa4')">Ver mapa</button><br/><br/>
+					  <div id="mapa4"></div><br/>
 				  
 				  <table>			  
             <tr>
@@ -515,11 +569,11 @@
 	        <p>Bacalao, alubiadas y cocina vasca en un sencillo local de hamburguesas con opciones vegetarianas y terraza.</p>
 				  
           <div class="btn_menu">
-            <a href="" >Ver la carta</a>
+             <div onclick="mostrar('4');">Mostrar/Ocultar carta</div>
           </div>
 
 			  </div>
-        <div class="col-md-12 carta">
+        <div class="carta" id="carta4">
 
           <div class="main_column">
           <div id="-Entrantes-" class="group_menu menu_oscuro">
@@ -619,8 +673,10 @@
 		  <div class="col-md-12">
 			  <div class="col-md-6 col-sm-12">
 			   
-				  <h2>Banderas</h2> <br/>
-				  <p><b>Direccion:</b> Navarro Villoslada Kalea, s/n, 48015 Bilbo, Bizkaia</p>
+				<h2 id="rest5">Hamburguesería Banderas</h2> <br/>
+				  <p id="dir5"><b>Direccion:</b> Navarro Villoslada Kalea, s/n, 48015 Bilbo, Bizkaia</p>
+				  <button class="btn_menu" onclick="geolocalizacion('43.277355','-2.959263','rest5','dir5','mapa5')">Ver mapa</button><br/><br/>
+					  <div id="mapa5"></div><br/>
 				 
           <table>			  
             <tr>
@@ -645,10 +701,10 @@
             </tr>
           </table> </br>
 	      <p>Muy buena comida y trato. Raciones, hamburguesas, sándwiches, platos combinados... También se prepara comida para llevar</p>
-        <p>Falta Poner el mapa etc</p>
-      
+     
+	 
         <div class="btn_menu">
-          <a href="" >Ver la carta</a>
+           <div onclick="mostrar('5');">Mostrar/Ocultar carta</div>
         </div>
 
 			</div>
@@ -657,7 +713,7 @@
 			     <img src="imagenes/Banderas.jpg" alt="">
 				
         </div>
-        <div class="col-md-12 carta">
+        <div class="carta" id="carta5">
 
           <div class="main_column">
           <div id="-Entrantes-" class="group_menu">
@@ -763,8 +819,10 @@
 			  </div>
 			  <div class="col-md-6 col-sm-12">
 			   
-				  <h2>Taberna El Arenal</h2>
-				  <p><b>Direccion:</b> Celestino María del Arenal Plaza, 8, 48015 Bilbo, Bizkaia</p> <br/>
+				    <h2 id="rest6">Taberna El Arenal</h2>
+				  <p id="dir6"><b>Direccion:</b> Celestino María del Arenal Plaza, 8, 48015 Bilbo, Bizkaia</p>
+				    <button class="btn_menu" onclick="geolocalizacion('43.275894','-2.956646','rest6','dir6','mapa6')">Ver mapa</button><br/><br/>
+					  <div id="mapa6"></div><br/>
 				  
 				  <table>			  
             <tr>
@@ -790,11 +848,11 @@
           </table> </br>
 	    <p>Buen trato, ambiente agradable y comida muy buena. Es un sitio donde se pueden hacer comidas familiares o comer el menú del dia</p>
         <div class="btn_menu">
-          <a href="" >Ver la carta</a>
+           <div onclick="mostrar('6');">Mostrar/Ocultar carta</div>
         </div>
 		
 			  </div>
-        <div class="col-md-12 carta">
+        <div class="carta" id="carta6">
 
           <div class="main_column">
           <div id="-Entrantes-" class="group_menu menu_oscuro">
