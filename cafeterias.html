@@ -2,6 +2,13 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="Hosteleria San ignacio">
 	<title>Hosteleria San ignacio reto2 </title>
+	<script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+	crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+	crossorigin=""></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&amp;display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
@@ -29,6 +36,24 @@
 			oculto=true;
 		}
 	}
+	
+	function geolocalizacion(coord1,coord2,nombre,dir,div) {
+		$("#"+div).css({"width":"400px","height":"400px"});
+		var mapa = L.map(div).setView([coord1,coord2], 17);
+		var nom=$("#"+nombre).html();
+		var direccion=$("#"+dir).html();
+
+		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+			maxZoom: 23,
+			id: 'mapbox/streets-v11',
+			tileSize: 512,
+			zoomOffset: -1,
+			accessToken: 'pk.eyJ1IjoiamFnb2JhIiwiYSI6ImNrazAxZTRiZzBjdncyeHJ1ZWtxOHY2N2gifQ.FvyM_hcjCIdgCliCYu2ftw'
+		}).addTo(mapa);
+		var marker = L.marker([coord1,coord2]).addTo(mapa);
+		marker.bindPopup("<b>"+nom+"</b><br>"+direccion).openPopup();
+}
 	</script>
 	<!-- ========== End JS ========== -->
 </head>
@@ -77,9 +102,10 @@
         <h1>Cafeterías en San Ignacio</h1>
             <div class="col-md-6 col-sm-12">
                     
-              <h2>Txoko Berria</h2> <br/>
-              <p><b>Direccion:</b> Agirre Lehendakariaren Etorb., 159, 48015 Bilbo, Bizkaia</p>
- 
+              <h2 id="caf1">Txoko Berria</h2> <br/>
+              <p id="dir1"><b>Direccion:</b> Agirre Lehendakariaren Etorb., 159, 48015 Bilbo, Bizkaia</p>
+			  <button class="btn_menu" onclick="geolocalizacion('43.278804','-2.961628','caf1','dir1','mapa1')">Ver mapa</button><br/><br/>
+					  <div id="mapa1"></div><br/>
               <p>Teléfono: 944004299</p>
 			
                <p>Visitanos sí quieres disfrutar de una buena hamburguesa, bocadillo o un plato del dia.Siempre con la mejor calidad precio</p>
@@ -154,9 +180,11 @@
 			  </div>
 			  <div class="col-md-6 col-sm-12">
 			   
-				  <h2>Panadería Bertiz</h2>
+				  <h2 id="caf2">Panadería Bertiz</h2>
 
-				  <p><b>Direccion:</b> Agirre Lehendakariaren Etorb., 171, 48015 Bilbo, Bizkaia</p> <br/>
+				  <p id="dir2"><b>Direccion:</b> Agirre Lehendakariaren Etorb., 171, 48015 Bilbo, Bizkaia</p> <br/>
+				   <button class="btn_menu" onclick="geolocalizacion('43.280348','-2.962527','caf2','dir2','mapa2')">Ver mapa</button><br/><br/>
+					  <div id="mapa2"></div><br/>
 
           <p>En Bertiz, durante más de 100 años de historia, nuestra máxima no ha cambiado:
 		  “el mejor pan se hace con los mejores ingredientes.” Bollería y pastelería de alta 
@@ -225,9 +253,10 @@
 		  <div class="col-md-12">
 			  <div class="col-md-6 col-sm-12">
 			   
-				  <h2>Café Bar Izarrak</h2> <br/>
-				  <p><b>Direccion:</b> Aragoi Kalea, 1, 48015 Bilbo, Bizkaia</p>
-				 
+				  <h2 id="caf3">Café Bar Izarrak</h2> <br/>
+				  <p id="dir3"><b>Direccion:</b> Aragoi Kalea, 1, 48015 Bilbo, Bizkaia</p>
+				    <button class="btn_menu" onclick="geolocalizacion('43.28181','-2.965397','caf3','dir3','mapa3')">Ver mapa</button><br/><br/>
+					  <div id="mapa3"></div><br/>
 
           <p>Un pequeño bar listo para pasar un agradable rato degustando cualquier vino
 		  y poder comier alguno de nuestros riquísimos platos. Trato muy 
@@ -307,10 +336,12 @@
 			  </div>
 			  <div class="col-md-6 col-sm-12">
 			   
-         <h2>Ermita kafetegi</h2>
+         <h2 id="caf4">Ermita kafetegi</h2>
           
-				  <p><b>Direccion:</b> Extremadura Kalea, 5, 48015 Bilbo, Bizkaia</p> <br/>
-
+				  <p id="dir4"><b>Direccion:</b> Extremadura Kalea, 5, 48015 Bilbo, Bizkaia</p> <br/>
+					  <button class="btn_menu" onclick="geolocalizacion('43.281588','-2.961175','caf4','dir4','mapa4')">Ver mapa</button><br/><br/>
+					  <div id="mapa4"></div><br/>
+					  
           <p>Comer en ERMITA kafetegi, con sus increíbles vistas de Azkue Fundazioa,
 		  es una oportunidad magnífica para sus clientes. Merece la pena venir a este
 		  lugar por su generoso laing. Empieza tu comida con un sorprendente café.</p>
@@ -377,8 +408,10 @@
 		  <div class="col-md-12">
 			  <div class="col-md-6 col-sm-12">
 			   
-				  <h2>Café-Bar "Presley"</h2> <br/>
-				  <p><b>Direccion:</b> Agirre Lehendakariaren Etorb., 179, 48015 Bilbo, Bizkaia</p>
+				  <h2 id="caf5">Café-Bar "Presley"</h2> <br/>
+				  <p id="dir5"><b>Direccion:</b> Agirre Lehendakariaren Etorb., 179, 48015 Bilbo, Bizkaia</p>
+				  <button class="btn_menu" onclick="geolocalizacion('43.281415','-2.96309','caf5','dir5','mapa5')">Ver mapa</button><br/><br/>
+					  <div id="mapa5"></div><br/>
 				 
           <p> Desde el ventanal de esta cafetería, la vista de Azkue Fundazioa es estupenda.
 		  Lo que caracteriza a Cafeteria Presley son los famosos pintxos que sirve. Empieza 
