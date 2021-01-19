@@ -12,8 +12,30 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/estilos.css" rel="stylesheet">
     <link href="css/bootsnav.css" rel="stylesheet">
+	<style>
+	.carta{
+		display:none;
+	}
+	</style>
     <!-- ========== End Estilo ========== -->
 
+	 <!-- ========== JS ========== -->
+	<script>
+	var oculto=true;
+	function mostrar(numero) {
+		var nombre = 'carta'+numero;
+		
+		
+		if(oculto==true){
+			document.getElementById(nombre).style.display = 'block';
+			oculto=false;
+		}else{
+			document.getElementById(nombre).style.display = 'none';
+			oculto=true;
+		}
+	}
+	</script>
+	<!-- ========== End JS ========== -->
 </head>
 
 
@@ -94,7 +116,7 @@
             
 
             <div class="btn_menu">
-              <a href="" >Ver la carta</a>
+              <div onclick="mostrar('1');">Mostrar/Ocultar carta</div>
               </div>
             </div>
             <div class="col-md-6 col-sm-12 img-right">
@@ -102,8 +124,7 @@
               <img src="imagenes/GazteluBerria.png" alt="">
             
             </div>
-            <div class="col-md-12 carta">
-
+            <div class="carta" id="carta1">
               <div class="main_column">
               <div id="-Entrantes-" class="group_menu">
                  <h3 class="main_title">"Entrantes"</h3>
@@ -189,9 +210,8 @@
                   </li>
                   </ul>
                 </div>
-              </div>
-            </div>  
-   
+              </div>  
+		</div>
 	  </div>
   </div>
   </div>
@@ -237,11 +257,11 @@
 	      <p>En la zona de mayor desarrollo en Bilbao, a un paso del metro, con unas vistas inmejorables de la ría, se halla nuestro restaurante Sidrería Ander, un lugar donde la comida es un placer y se puede disfrutar en un ambiente familiar y tranquilo.</p>
 				  
         <div class="btn_menu">
-          <a href="" >Ver la carta</a>
+          <div onclick="mostrar('2');">Mostrar/Ocultar carta</div>
           </div>
        
 			  </div>
-        <div class="col-md-12 carta">
+        <div class="carta" id="carta2">
 
           <div class="main_column">
           <div id="-Entrantes-" class="group_menu">
@@ -370,7 +390,7 @@
         <p>Falta Poner el mapa etc</p>
         
         <div class="btn_menu">
-          <a href="" >Ver la carta</a>
+           <div onclick="mostrar('3');">Mostrar/Ocultar carta</div>
         </div>
        
         
@@ -380,7 +400,7 @@
 			     <img src="imagenes/Serapio.jpg" alt="">
 				
         </div>
-        <div class="col-md-12 carta">
+        <div class="carta" id="carta3">
 
           <div class="main_column">
           <div id="-Entrantes-" class="group_menu">
@@ -515,11 +535,11 @@
 	        <p>Bacalao, alubiadas y cocina vasca en un sencillo local de hamburguesas con opciones vegetarianas y terraza.</p>
 				  
           <div class="btn_menu">
-            <a href="" >Ver la carta</a>
+             <div onclick="mostrar('4');">Mostrar/Ocultar carta</div>
           </div>
 
 			  </div>
-        <div class="col-md-12 carta">
+        <div class="carta" id="carta4">
 
           <div class="main_column">
           <div id="-Entrantes-" class="group_menu menu_oscuro">
@@ -648,7 +668,7 @@
         <p>Falta Poner el mapa etc</p>
       
         <div class="btn_menu">
-          <a href="" >Ver la carta</a>
+           <div onclick="mostrar('5');">Mostrar/Ocultar carta</div>
         </div>
 
 			</div>
@@ -657,7 +677,7 @@
 			     <img src="imagenes/Banderas.jpg" alt="">
 				
         </div>
-        <div class="col-md-12 carta">
+        <div class="carta" id="carta5">
 
           <div class="main_column">
           <div id="-Entrantes-" class="group_menu">
@@ -790,11 +810,11 @@
           </table> </br>
 	    <p>Buen trato, ambiente agradable y comida muy buena. Es un sitio donde se pueden hacer comidas familiares o comer el menú del dia</p>
         <div class="btn_menu">
-          <a href="" >Ver la carta</a>
+           <div onclick="mostrar('6');">Mostrar/Ocultar carta</div>
         </div>
 		
 			  </div>
-        <div class="col-md-12 carta">
+        <div class="carta" id="carta6">
 
           <div class="main_column">
           <div id="-Entrantes-" class="group_menu menu_oscuro">
