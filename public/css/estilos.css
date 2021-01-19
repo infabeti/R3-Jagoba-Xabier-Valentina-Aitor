@@ -277,6 +277,7 @@ p.titulo_art {
     color: white;
     font-size: 20px;
     margin-top: 30px;
+    cursor: pointer;
 }
 .btn_menu a {
     color: white;
@@ -334,6 +335,12 @@ p.titulo_art {
 }
 .columnaCarta {
     margin-top: 50px;
+}
+.opinion{
+    display:none;
+}
+.carta{
+    display:none;
 }
  /*-----------END CARTA-----------*/
  /*-----------FORMULARIO DE CONTACTO-----------*/
