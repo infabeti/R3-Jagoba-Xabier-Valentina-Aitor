@@ -12,8 +12,30 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/estilos.css" rel="stylesheet">
     <link href="css/bootsnav.css" rel="stylesheet">
+	<style>
+	.opinion{
+		display:none;
+	}
+	</style>
     <!-- ========== End Estilo ========== -->
-
+	
+	<!-- ========== JS ========== -->
+	<script>
+	var oculto=true;
+	function mostrar(numero) {
+		var nombre = 'opinion'+numero;
+		
+		
+		if(oculto==true){
+			document.getElementById(nombre).style.display = 'block';
+			oculto=false;
+		}else{
+			document.getElementById(nombre).style.display = 'none';
+			oculto=true;
+		}
+	}
+	</script>
+	<!-- ========== End JS ========== -->
 </head>
 
 
@@ -72,7 +94,7 @@
                <p>Visitanos sí quieres disfrutar de una buena hamburguesa, bocadillo o un plato del dia.Siempre con la mejor calidad precio</p>
 		
                 <div class="btn_menu">
-                  <a href="" >Leer Reseñas</a>
+                   <div onclick="mostrar('1');">Mostrar/Ocultar reseñas</div>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 img-right">
@@ -81,7 +103,7 @@
             
             </div>
 
-			<div class="col-md-12 carta">
+			<div class="opinion" id="opinion1">
 
               <div class="main_column">
               <div id="1ªReseña" class="group_menu">
@@ -151,12 +173,12 @@
 		  en los casi 200 establecimientos de Bakery Coffee de la marca.</p>
 
            <div class="btn_menu">
-                  <a href="" >Leer Reseñas</a>
+                   <div onclick="mostrar('2');">Mostrar/Ocultar reseñas</div>
                 </div>
             </div>
             
 
-			<div class="col-md-12 carta">
+			<div class="opinion" id="opinion2">
 
               <div class="main_column">
               <div id="1ªReseña" class="group_menu">
@@ -224,7 +246,7 @@
            
 
             <div class="btn_menu">
-              <a href="" >Leer Reseñas</a>
+               <div onclick="mostrar('3');">Mostrar/Ocultar reseñas</div>
             </div>
        
         
@@ -235,7 +257,7 @@
 				
 			  </div>	
 			  
-			<div class="col-md-12 carta">
+			<div class="opinion" id="opinion3">
               <div class="main_column">
               <div id="1ªReseña" class="group_menu">
                  <h3 class="main_title">Bego</h3>
@@ -305,13 +327,13 @@
            
 
             <div class="btn_menu">
-              <a href="" >Leer Reseñas</a>
+               <div onclick="mostrar('4');">Mostrar/Ocultar reseñas</div>
             </div>
 
 			  </div>
  
  
- <div class="col-md-12 carta">
+			<div class="opinion" id="opinion4">
               <div class="main_column">
               <div id="1ªReseña" class="group_menu">
                  <h3 class="main_title">Sofia conde</h3>
@@ -374,7 +396,7 @@
 
 
             <div class="btn_menu">
-              <a href="" >Leer Reseñas</a>
+               <div onclick="mostrar('5');">Mostrar/Ocultar reseñas</div>
             </div>
 
 			</div>
@@ -385,7 +407,7 @@
         </div>
 		
 		
-		<div class="col-md-12 carta">
+		<div class="opinion" id="opinion5">
               <div class="main_column">
               <div id="1ªReseña" class="group_menu">
                  <h3 class="main_title">Zuiñe Santos</h3>
