@@ -14,16 +14,4 @@ function inicio(){
 			$(this).text("Mostrar carta");
 		}
 	});
-
-	$(".boton").click(function(){
-		$("#menu").sortTable("letter");
-	});	
-
-	$(".boton2").click(function(){
-		$("#menu").sortTable("letter", {column: 2, reverse: false});
-	});	
-
-	$(".boton3").click(function(){
-		$("#menu").sortTable("letter", {column: 2, reverse: true});
-	});
 }
