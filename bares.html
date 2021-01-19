@@ -2,6 +2,13 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="Hosteleria San ignacio">
 	<title>Hosteleria San Ignacio reto2 </title>
+	<script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+	crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+	crossorigin=""></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&amp;display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
@@ -20,6 +27,25 @@
 	$(function(){
 		$('table').tablesorter();
 	});
+	
+	function geolocalizacion(coord1,coord2,nombre,dir,div) {
+		$("#"+div).css({"width":"400px","height":"400px"});
+		var mapa = L.map(div).setView([coord1,coord2], 17);
+		var nom=$("#"+nombre).html();
+		var direccion=$("#"+dir).html();
+
+		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+			maxZoom: 23,
+			id: 'mapbox/streets-v11',
+			tileSize: 512,
+			zoomOffset: -1,
+			accessToken: 'pk.eyJ1IjoiamFnb2JhIiwiYSI6ImNrazAxZTRiZzBjdncyeHJ1ZWtxOHY2N2gifQ.FvyM_hcjCIdgCliCYu2ftw'
+		}).addTo(mapa);
+		var marker = L.marker([coord1,coord2]).addTo(mapa);
+		marker.bindPopup("<b>"+nom+"</b><br>"+direccion).openPopup();
+}
+	
 	</script>
 	<!-- ========== End JQuery ========== -->
 	
@@ -73,8 +99,10 @@
         <h1>Bares en San Ignacio</h1>
 			  <div class="col-md-6 col-sm-12">
 			   
-        <h2>La Vega</h2> <br/>
-        <p><b>Direccion:</b>  Lehendakari Agirre, 163 (Bilbao)</p>
+        <h2 id="bar1">La Vega</h2> <br/>
+        <p id="dir1"><b>Direccion:</b>  Lehendakari Agirre, 163 (Bilbao)</p>
+		<button class="btn_menu" onclick="geolocalizacion('43.279464','-2.961997','bar1','dir1','mapa1')">Ver mapa</button><br/><br/>
+					  <div id="mapa1"></div><br/>
         <p>Teléfonos: 944751120, 688607145</p>
 
         <p>Especialidad: Desayunos, café y pintxos.</p>
@@ -186,8 +214,10 @@
 			  </div>
 			  <div class="col-md-6 col-sm-12">
 			   
-				  <h2>Bar Nove</h2>
-				  <p><b>Direccion:</b> Benita Asas Kalea, 48015 Bilbo, Bizkaia</p> <br/>
+				  <h2 id="bar2">Bar Nove</h2>
+				  <p id="dir2"><b>Direccion:</b> Benita Asas Kalea, 48015 Bilbo, Bizkaia</p> <br/>
+				  <button class="btn_menu" onclick="geolocalizacion('43.279762','-2.962369','bar2','dir2','mapa2')">Ver mapa</button><br/><br/>
+					  <div id="mapa2"></div><br/>
 	      <p>Bar Nove merecen una visita. La receta del éxito de este bar está en sus famosos pintxos. De acuerdo con las opiniones de los críticos, aquí sus camareros sirven un buen café.
         Su encantador ambiente es el añadido adecuado a los buenos manjares y a la excelente ubicación de Bar Nove.</p>
 				  
@@ -278,8 +308,10 @@
 		  <div class="col-md-12">
 			  <div class="col-md-6 col-sm-12">
 			   
-				  <h2>Bar Malibu</h2> <br/>
-				  <p><b>Direccion:</b> Agirre Lehendakariaren Etorb., 173, 48015 Bilbo, Bizkaia</p>
+				  <h2 id="bar3">Bar Malibu</h2> <br/>
+				  <p id="dir3"><b>Direccion:</b> Agirre Lehendakariaren Etorb., 173, 48015 Bilbo, Bizkaia</p>
+				    <button class="btn_menu" onclick="geolocalizacion('43.280902','-2.962783','bar3','dir3','mapa3')">Ver mapa</button><br/><br/>
+					  <div id="mapa3"></div><br/>
 				 
 	<p>El Bar Malibú está situado en San Ignacio, junto a la salida de metro, muy accesible para que te acerques en cualquier momento a disfrutar de tu ración y de tu cazuelita con Colectivia.</p>
 		
@@ -377,8 +409,10 @@
 			  </div>
 			  <div class="col-md-6 col-sm-12">
 			   
-				  <h2>Bar La Bodega</h2>
-				  <p><b>Direccion:</b> 9, Oñatiko Unibertsitarearen Kalea, 48015 Bilbo, BI</p> <br/>
+				  <h2 id="bar4">Bar La Bodega</h2>
+				  <p id="dir4"><b>Direccion:</b> 9, Oñatiko Unibertsitarearen Kalea, 48015 Bilbo, BI</p> <br/>
+				    <button class="btn_menu" onclick="geolocalizacion('43.280668','-2.962805','bar4','dir4','mapa4')">Ver mapa</button><br/><br/>
+					  <div id="mapa4"></div><br>
 	      <p>Con mas de 50 años de tradicion,nuestros pintxos estrellas, txistorras y morcillas.
          San ignacio, universidad de oñate 10.
         Te esperamos!!!!</p>
@@ -467,8 +501,10 @@
 		  <div class="col-md-12">
 			  <div class="col-md-6 col-sm-12">
 			   
-				  <h2>Versalles</h2> <br/>
-				  <p><b>Direccion:</b> Agirre Lehendakariaren Etorb., 169, 48015 Bilbo, Bizkaia</p>
+				  <h2 id="bar5">Versalles</h2> <br/>
+				  <p id="dir5"><b>Direccion:</b> Agirre Lehendakariaren Etorb., 169, 48015 Bilbo, Bizkaia</p>
+				    <button class="btn_menu" onclick="geolocalizacion('43.28016','-2.962421','bar5','dir5','mapa5')">Ver mapa</button><br/><br/>
+					  <div id="mapa5"></div><br>
 				 
 
 	        <p>Muy buena comida y trato. Raciones, hamburguesas, sándwiches, platos combinados... También se prepara comida para llevar</p>
