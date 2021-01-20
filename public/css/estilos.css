@@ -282,6 +282,21 @@ p.titulo_art {
 .btn_menu a {
     color: white;
 }
+
+ .btn_calcular{
+    border-radius: 50px;
+    background: #cab3a3;
+    width: 114px;
+    padding: 9px 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    /* margin-top: 30px; */
+    cursor: pointer;
+}
+.btn_calcular a {
+    color: white;
+}
  /*-----------CARTA-----------*/
 .group_menu {
     background-color: #fbf3f3;
