@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/infabeti/R3-Jagoba-Xabier-Valentina-Aitor#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jasmine-node": "^3.0.0"
   }
 }
