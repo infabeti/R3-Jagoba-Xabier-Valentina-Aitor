@@ -4,6 +4,7 @@
 	<meta charset="UTF-8" />
 	<meta name="description" content="Hosteleria San ignacio">
 	<title>Hosteleria San ignacio reto2 </title>
+	<script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
@@ -15,6 +16,42 @@
     <link href="css/bootsnav.css" rel="stylesheet" />
     <!-- ========== End Estilo ========== -->
 
+	<!-- ========== JS ========== -->
+	
+	<script>
+	$(document).ready();
+	function muestra(){
+		var texto=$("#info span");
+		var mostrar=$("#mostrar");
+		var ocultar=$("#ocultar");
+		var caja=$("#caja");
+		
+	
+		if(texto.hasClass("oculto")){
+			texto.removeClass("oculto");
+			texto.addClass("visible");
+			mostrar.removeClass("visible");
+			mostrar.addClass("oculto");
+			ocultar.removeClass("oculto");
+			ocultar.addClass("visible");
+			caja.removeClass("visible");
+			caja.addClass("oculto");
+		}
+	
+		else{
+			texto.removeClass("visible");
+			texto.addClass("oculto");
+			mostrar.removeClass("oculto");
+			mostrar.addClass("visible");
+			ocultar.removeClass("visible");
+			ocultar.addClass("oculto");
+			caja.removeClass("oculto");
+			caja.addClass("visible");
+	}
+}
+	
+	
+	</script>
 </head>
 
 
@@ -60,7 +97,14 @@
 </div>
 
 <h1>Formulario de<span> contacto</span></h1>
+<p id="info">Si desea hacer una reserva en uno de los restaurantes de la web, deberás indicar el nombre del restaurante,
+ el nombre de la persona que <a id="caja" class="visible">...</a><span class="oculto"> hace la reserva y fecha y hora de la reserva.</br>
+O si lo prefieres puedes hacer la reserva por mail en la dirección reservas@hosteleriasnig.com y por WhatsApp 
+al número 640932099 indicando los datos previamente mencionados.</br>
+Realizar la reserva 24h antes.</span></p>
 
+<a id="mostrar" href="#" onclick="muestra();" class="visible">Mostrar mas</a>
+<a id="ocultar" href="#" onclick="muestra();" class="oculto">Mostrar menos</a>
 <div class="contenedor">
 
 

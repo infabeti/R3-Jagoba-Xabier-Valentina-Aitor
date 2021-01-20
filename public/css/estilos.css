@@ -455,3 +455,27 @@ footer a {
 	} 
 }
 
+/*---------- FUNCIÓN MOSTRAR Y OCULTAR TEXTO ----------*/
+
+.oculto {
+	display: none; 
+	}
+		
+.visible {
+	display: inline;
+	}
+
+#info{
+	text-align:center;
+	margin-left:300px;
+}
+
+#mostrar{
+	margin-left:550px;
+}
+
+#ocultar{
+	margin-left:550px;
+	
+}
+		
