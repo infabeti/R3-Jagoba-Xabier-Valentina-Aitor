@@ -10,9 +10,5 @@ function calcular(precio) {
 		parseInt(total);
 		alert("Total(IVA incluido): "+total+"€");
 	}
-	return total;
-}
-
-module.exports = {
-    calcular:calcular
+	
 }
