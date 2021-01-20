@@ -12,3 +12,7 @@ function calcular(precio) {
 	}
 	
 }
+
+module.exports = {
+    calcular:calcular
+}
