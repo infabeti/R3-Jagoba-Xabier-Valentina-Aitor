@@ -1,4 +1,3 @@
-$(document).ready();
 var oculto=true;
 	function mostrar(numero) {
 		var nombre = 'carta'+numero;

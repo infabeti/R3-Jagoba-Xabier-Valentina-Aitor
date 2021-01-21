@@ -1,4 +1,3 @@
-$(document).ready();
 	function muestra(){
 		var texto=$("#info span");
 		var mostrar=$("#mostrar");
