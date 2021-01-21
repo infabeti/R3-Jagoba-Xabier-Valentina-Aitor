@@ -1,5 +1,7 @@
 $(document).ready();
+  
 function calcular(precio) {
+  
 	var cantidad = prompt("¿Cuantos desea?");
 	var total;
 	
