@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Hosteleria San ignacio">
+	<title>Hosteleria San ignacio reto2 </title>
+	<script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+  <script  type="text/javascript" src="js/mostrarYOcultar.js"></script>
+
+    <!-- ========== Estilo ========== -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/estilos.css" rel="stylesheet" />
+    <link href="css/bootsnav.css" rel="stylesheet" />
+    <!-- ========== End Estilo ========== -->
+
+	
+	
+</head>
+
+
+<body>
+<header class="page-header">
+
+
+
+        <!-- Navegación -->
+
+          <div class="container">
+
+              <div class="navbar-header">
+      
+                  <a href="index.html">
+                      <img src="imagenes/logo.png" class="logo logo-display" alt="Logo">
+                  </a>
+              </div>
+
+              <div id="navbar-menu">
+                  <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="bares.html">BARES</a></li>
+                    <li><a href="restaurantes.html">RESTAURANTES</a></li>
+                    <li><a href="cafeterias.html">CAFETERÍAS</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+
+                  </ul>
+              </div>
+          </div>
+      <!-- End Navegación -->
+
+
+
+
+</header>
+
+
+<div class="banner bannerfixed">
+
+
+
+</div>
+<div class="container">
+    <h1>Formulario de<span> contacto</span></h1>
+    <p id="info">Si desea hacer una reserva en uno de los restaurantes de la web, deberás indicar el nombre del restaurante,
+    el nombre de la persona que <a id="puntos" class="visible">...</a><span class="oculto"> hace la reserva y fecha y hora de la reserva.</br>
+    O si lo prefieres puedes hacer la reserva por mail en la dirección <a href="mailto:reservas@hosteleriasnig.com">reservas@hosteleriasnig.com</a> y por WhatsApp 
+    al número 640932099 indicando los datos previamente mencionados.</br>
+    Realizar la reserva 24h antes.</span></p>
+
+    <a id="mostrar" href="#" onclick="muestra();" class="visible">Mostrar mas</a>
+    <a id="ocultar" href="#" onclick="muestra();" class="oculto">Mostrar menos</a>
+
+
+
+  <form method="post" action="index.php">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" name="nombre" placeholder="Nombre completo">
+      <label for="email">Email:</label>
+      <input id="email" name="email" type="email" placeholder="ejemplo@email.com">
+      <label>Teléfono</label>
+      <input name="telefono" pattern="[0-9]{9}" required type="tel" placeholder="XXXXXXXXX" />
+      <label>Fecha:</label>
+      <input name="fecha" type="date" />
+      <label>Hora:</label>
+      <input type="time" name="hora">
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Danos tu mensaje"></textarea>
+      <input id="submit" name="submit" type="submit" value="Enviar">
+  </form>
+
+
+
+</div>
+
+    <!-- Start Footer 
+    ============================================= -->
+    <footer class="default-padding-top bg-light">
+      <div class="container">
+          <div class="row">
+              <div class="f-items">
+                  <div class="col-md-4 col-sm-6 equal-height item">
+                      <div class="f-item about">
+                          <img src="imagenes/logo.png" alt="Logo">
+						  <br>
+                          <p>
+						  <br>
+                              Descubre y disfruta todas las posibilidades que te ofrece San Ignacio,exquisita gastronomía y noches mágicas.
+                          </p>
+   
+                      </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6 equal-height item">
+                      <div class="f-item link">
+                          <h4>Servicios</h4>
+                          <ul>
+                              <li>
+                                  <a href="#">Bares</a>
+                              </li>
+                              <li>
+                                  <a href="">Cafeterías</a>
+                              </li>
+                              <li>
+                                  <a href="">Restaurantes</a>
+                              </li>
+
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-6 equal-height item">
+                      <div class="f-item twitter-widget">
+                          <h4>Información de contacto</h4>
+                          <div class="address">
+                              <ul>
+                                  <li>
+                
+                                      <div class="info">
+                                          <h5>Ubicación:</h5>
+                                          <span>San Ignacio<br>Bilbao<br>Vizcaya</span>
+                                      </div>
+                                  </li>
+
+                                  <li>
+     
+                                      <div class="info">
+                                          <h5>Email:</h5>
+                                          <span>info@hosteleriasnig.com</span>
+                                      </div>
+                                  </li>
+                                  <li>
+         
+                                      <div class="info">
+                                          <h5>Teléfono:</h5>
+                                          <span>946 531 401</span>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Start Footer Bottom -->
+      <div class="footer-bottom">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="col-md-6">
+                          <p>By <a href="index.html">R3-Jagoba-Xabier-Valentina-Aitor</a></p>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- End Footer Bottom -->
+  </footer>
+  <!-- End Footer -->
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

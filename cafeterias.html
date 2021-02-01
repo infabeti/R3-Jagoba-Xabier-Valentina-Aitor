@@ -1,0 +1,533 @@
+<html lang="es"><head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Hosteleria San ignacio">
+	<title>Hosteleria San ignacio reto2 </title>
+	<script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+	crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+	crossorigin=""></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+  <script  type="text/javascript" src="js/geolocalizacion.js"></script>
+  <script  type="text/javascript" src="js/mostrarOpiniones.js"></script>
+  
+    <!-- ========== Estilo ========== -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
+    <link href="css/bootsnav.css" rel="stylesheet">
+
+    <!-- ========== End Estilo ========== -->
+	
+</head>
+
+<body>
+<header class="page-header">
+        <!-- Navegación -->
+
+          <div class="container">
+
+              <div class="navbar-header">
+      
+                  <a href="index.html">
+                      <img src="imagenes/logo.png" class="logo logo-display" alt="Logo">
+                  </a>
+              </div>
+
+              <div id="navbar-menu">
+                  <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="bares.html">BARES</a></li>
+                    <li><a href="restaurantes.html">RESTAURANTES</a></li>
+                    <li><a href="cafeterias.html">CAFETERÍAS</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+
+                  </ul>
+              </div>
+          </div>
+      <!-- End Navegación -->
+
+
+
+
+</header>
+<div class="banner">
+
+  <img src="imagenes/banner-cafeteria.jpg" alt="">
+  
+
+</div>
+
+<!-- Cuadro en blanco --> 
+  <div class="container contenido1">
+	  <div class="row">
+		  <div class="col-md-12">
+        <h1>Cafeterías en San Ignacio</h1>
+            <div class="col-md-6 col-sm-12">
+                    
+              <h2 id="caf1">Txoko Berria</h2> <br/>
+              <p id="dir1"><b>Direccion:</b> Agirre Lehendakariaren Etorb., 159, 48015 Bilbo, Bizkaia</p>
+			  <button class="btn_menu" onclick="geolocalizacion('43.278804','-2.961628','caf1','dir1','mapa1')">Ver mapa</button><br/><br/>
+					  <div id="mapa1"></div><br/>
+              <p>Teléfono: 944004299</p>
+			
+               <p>Visitanos sí quieres disfrutar de una buena hamburguesa, bocadillo o un plato del dia.Siempre con la mejor calidad precio</p>
+		
+                <div class="btn_menu">
+                   <div onclick="mostrar('1');">Mostrar/Ocultar reseñas</div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 img-right">
+                
+              <img src="imagenes/txoko-berri.jpg" alt="">
+            
+            </div>
+
+			<div class="col-md-12 col-sm-12 opinion" id="opinion1">
+
+       <div class="main_column">
+          <div id="1ªReseña" class="group_menu">
+            <h3 class="main_title">Javier Saiz</h3>
+            <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Como frecuentemente. Sitio pequeño pero trato excelente y buena comida</span>
+                </div>
+            </li>
+            </ul> 
+          </div>
+			  </div>
+			  
+			  <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Blanki Ibarrondo</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Sí quieres disfrutar de una buena hamburguesa,bocadillo o un plato del dia lo recomiendo.Calidad precio 👍</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+			  <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Eduardo Alzola</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Hamburguesas y bocadillos muy buenos, el sitio gusta para comida informal.</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+            </div>  
+   
+	  
+			
+			
+	  </div>
+  </div>
+  </div>
+ <!-- Cuadro en blanco fin --> 
+ 
+ <!-- Cuadro en negro -->
+	<div class="row contenido2row">	  
+  <div class="container contenido2">
+	  
+		  <div class="col-md-12">
+		  	<div class="col-md-6 col-sm-12 img-right">
+			  
+			     <img src="imagenes/bertiz.jpg" alt="">
+				
+			  </div>
+			  <div class="col-md-6 col-sm-12">
+			   
+				  <h2 id="caf2">Panadería Bertiz</h2>
+
+				  <p id="dir2"><b>Direccion:</b> Agirre Lehendakariaren Etorb., 171, 48015 Bilbo, Bizkaia</p> <br/>
+				   <button class="btn_menu" onclick="geolocalizacion('43.280348','-2.962527','caf2','dir2','mapa2')">Ver mapa</button><br/><br/>
+					  <div id="mapa2"></div><br/>
+
+          <p>En Bertiz, durante más de 100 años de historia, nuestra máxima no ha cambiado:
+		  “el mejor pan se hace con los mejores ingredientes.” Bollería y pastelería de alta 
+		  calidad, y procesos inspirados en técnicas artesanales, conservan el mismo espíritu
+		  en los casi 200 establecimientos de Bakery Coffee de la marca.</p>
+
+           <div class="btn_menu">
+                   <div onclick="mostrar('2');">Mostrar/Ocultar reseñas</div>
+                </div>
+            </div>
+            
+
+			<div class="col-md-12 col-sm-12 opinion" id="opinion2">
+
+              <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Beatriz</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Siempre pido pan de semillas con aceite de oliva,lo que no entiendo es que como en algunas panaderías ponen más cantidad de pan que en otras</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+			  <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Alberto</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Excelente calidad/precio,con una gran variedad de productos a elegir y una limpieza que se hace visible nada mas cruzar la puerta del local,todo ello aderezado con una profesionalidad y un trato exquisito por parte de todos sus trabajadores/as</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+			  <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Yolanda Giner</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">La verdad es que tiene una gran variedad de panes y pasteles, por lo que es ideal para ir a desayunar, ya que tienes una variedad bastante grande. El precio me pareció muy bueno, barato quizá.</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+            </div>  
+			  
+			  
+			  
+			  
+			  
+
+		  </div>
+	  </div>
+  </div>
+<!-- Cuadro en negro Fin   -->
+
+<!-- Cuadro en blanco --> 
+  <div class="container contenido1">
+	  <div class="row">
+		  <div class="col-md-12">
+			  <div class="col-md-6 col-sm-12">
+			   
+				  <h2 id="caf3">Café Bar Izarrak</h2> <br/>
+				  <p id="dir3"><b>Direccion:</b> Aragoi Kalea, 1, 48015 Bilbo, Bizkaia</p>
+				    <button class="btn_menu" onclick="geolocalizacion('43.28181','-2.965397','caf3','dir3','mapa3')">Ver mapa</button><br/><br/>
+					  <div id="mapa3"></div><br/>
+
+          <p>Un pequeño bar listo para pasar un agradable rato degustando cualquier vino
+		  y poder comier alguno de nuestros riquísimos platos. Trato muy 
+		  agradable está en pleno Camino de Santiago del Norte, recomendable para reponer
+		  fuerzas de forma rica y a buen precio.</p>
+
+           
+
+            <div class="btn_menu">
+               <div onclick="mostrar('3');">Mostrar/Ocultar reseñas</div>
+            </div>
+       
+        
+			  </div>
+			  <div class="col-md-6 col-sm-12 img-right">
+			  
+			     <img src="imagenes/cafe-izarrak.jpg" alt="">
+				
+			  </div>	
+			  
+			<div class="col-md-12 col-sm-12 opinion" id="opinion3">
+              <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Bego</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Hoy han empezado a servir comida por encargo, como siempre muy buena relacion calidad precio. He efectuado el encargo telefonicamente para las 14,30. El servicio muy amables.</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+			  <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Pedro</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">He vuelto varias veces y cada vez me gusta más Tienen un buen producto y un buen vino Las hamburguesas de Juan las mejores de Bilbao El trato es de diez Mucha sencillez y amabilidad</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+			  <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Kepa</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Sinceramente... a mis 42 años no he probado mejor hamburguesa que la de este local... qué barbaridad... recomiendo la de salmón fresco. Como colofòn un postre casero (tarta de queso)... qué delicia!!! Un trato muy agradable y familiar... al ser un local pequeño te hacen sentir como en familia... la camarera genial!!! Cada vez que venga a Bilbao desde Lanzarote... prometo repetir! Muchas gracias x la experiencia.</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+            </div> 			  
+		
+		
+		
+
+		  </div>
+	  </div>
+  </div>
+ <!-- Cuadro en blanco fin 2 --> 
+ 
+  <!-- Cuadro en negro -->
+	<div class="row contenido2row">	  
+    <div class="container contenido2">
+	  
+		  <div class="col-md-12">
+		  	<div class="col-md-6 col-sm-12 img-right">
+			  
+			     <img src="imagenes/kafetegi.jpg" alt="">
+				
+			  </div>
+			  <div class="col-md-6 col-sm-12">
+			   
+         <h2 id="caf4">Ermita kafetegi</h2>
+          
+				  <p id="dir4"><b>Direccion:</b> Extremadura Kalea, 5, 48015 Bilbo, Bizkaia</p> <br/>
+					  <button class="btn_menu" onclick="geolocalizacion('43.281588','-2.961175','caf4','dir4','mapa4')">Ver mapa</button><br/><br/>
+					  <div id="mapa4"></div><br/>
+					  
+          <p>Comer en ERMITA kafetegi, con sus increíbles vistas de Azkue Fundazioa,
+		  es una oportunidad magnífica para sus clientes. Merece la pena venir a este
+		  lugar por su generoso laing. Empieza tu comida con un sorprendente café.</p>
+
+           
+
+            <div class="btn_menu">
+               <div onclick="mostrar('4');">Mostrar/Ocultar reseñas</div>
+            </div>
+
+			  </div>
+ 
+ 
+			<div class="col-md-12 col-sm-12 opinion" id="opinion4">
+              <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Sofia conde</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Excelente sitio y servicio! Gente muy maja y agradable.</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+			  <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Aislen Cabrito</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Un sitio agradable donde te tratan con mucha amabilidad.... Y estupendo para tomarte algo en la terraza mientras los peques juegan en los columpios o en las canastas.</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+			  <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Jorge Martínez</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Buen bar con una terraza estupenda junto a una plaza y parque infantil. El café muy bueno y los zuritos generosos.</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+            </div>
+ 
+ 
+ 
+ 
+		  </div>
+	  </div>
+  </div>
+<!-- Cuadro en negro Fin 2  -->
+
+<!-- Cuadro en blanco 3 --> 
+  <div class="container contenido1">
+	  <div class="row">
+		  <div class="col-md-12">
+			  <div class="col-md-6 col-sm-12">
+			   
+				  <h2 id="caf5">Café-Bar "Presley"</h2> <br/>
+				  <p id="dir5"><b>Direccion:</b> Agirre Lehendakariaren Etorb., 179, 48015 Bilbo, Bizkaia</p>
+				  <button class="btn_menu" onclick="geolocalizacion('43.281415','-2.96309','caf5','dir5','mapa5')">Ver mapa</button><br/><br/>
+					  <div id="mapa5"></div><br/>
+				 
+          <p> Desde el ventanal de esta cafetería, la vista de Azkue Fundazioa es estupenda.
+		  Lo que caracteriza a Cafeteria Presley son los famosos pintxos que sirve. Empieza 
+		  tu comida con una extraordinaria tónica o una sensacional ginebra. No puedes dejar
+		  de probar su magnífico café cuando vengas a este lugar.</p>
+
+
+            <div class="btn_menu">
+               <div onclick="mostrar('5');">Mostrar/Ocultar reseñas</div>
+            </div>
+
+			</div>
+			  <div class="col-md-6 col-sm-12 img-right">
+			  
+			     <img src="imagenes/presley.jpg" alt="">
+				
+        </div>
+		
+		
+		<div class="col-md-12 col-sm-12 opinion" id="opinion5">
+              <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Zuiñe Santos</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Buenos pintxos y agradables camareros. Tienen mesas para estar dentro cómodamente con grandes televisores y con local limpio y cuidado . y también una agradable terraza cubierta para los días de lluvia .Es un referente en nuestro barrio.Desde primera hora de la mañana para un buen desayuno hasta cierre con detalles con la consumición .</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+			  <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Manuel López Frías</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Buena cafetería, ambiente informal y con excelente limpieza, tanto el bar como los servicios.En la barra gran variedad de pinchos y bastantes mesas para tomar algo tranquilo.El café es buenísimo y los precios acordes.El servicio profesional y rápido. El trato fue cordial y familiar.Dispone de gran terraza exterior cubierta para la lluvia.Ubicación a pie de boca de metro y parada de bus.</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+			  <div class="main_column">
+              <div id="1ªReseña" class="group_menu">
+                 <h3 class="main_title">Shyra Shira</h3>
+                <ul class="menu_wrapper"> <li class="menu_data clear ">
+                <div class="menu_meal">
+                <span class="meal_name">Buen café y mejor trato...Buen lugar para reunirte en confianza, ya sea dentro del local o en su magnífica terraza...</span>
+                </div>
+                </li>
+                </ul> 
+              </div>
+			  </div>
+			  
+            </div>
+ 
+		  </div>
+	  </div>
+  </div>
+ <!-- Cuadro en blanco fin 3 --> 
+ 
+
+
+    <!-- Start Footer 
+    ============================================= -->
+    <footer class="default-padding-top bg-light">
+      <div class="container">
+          <div class="row">
+              <div class="f-items">
+                  <div class="col-md-4 col-sm-6 equal-height item">
+                      <div class="f-item about">
+                          <img src="imagenes/logo.png" alt="Logo">
+						  <br>
+                          <p>
+						  <br>
+                              Descubre y disfruta todas las posibilidades que te ofrece San Ignacio,exquisita gastronomía y noches mágicas.
+                          </p>
+   
+                      </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6 equal-height item">
+                      <div class="f-item link">
+                          <h4>Servicios</h4>
+                          <ul>
+                              <li>
+                                  <a href="#">Bares</a>
+                              </li>
+                              <li>
+                                  <a href="">Cafeterías</a>
+                              </li>
+                              <li>
+                                  <a href="">Restaurantes</a>
+                              </li>
+
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-6 equal-height item">
+                      <div class="f-item twitter-widget">
+                          <h4>Información de contacto</h4>
+                          <div class="address">
+                              <ul>
+                                  <li>
+                
+                                      <div class="info">
+                                          <h5>Ubicación:</h5>
+                                          <span>San Ignacio<br>Bilbao<br>Vizcaya</span>
+                                      </div>
+                                  </li>
+
+                                  <li>
+     
+                                      <div class="info">
+                                          <h5>Email:</h5>
+                                          <span>info@hosteleriasnig.com</span>
+                                      </div>
+                                  </li>
+                                  <li>
+         
+                                      <div class="info">
+                                          <h5>Teléfono:</h5>
+                                          <span>946 531 401</span>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Start Footer Bottom -->
+      <div class="footer-bottom">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="col-md-6">
+                          <p>By <a href="index.html">R3-Jagoba-Xabier-Valentina-Aitor</a></p>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- End Footer Bottom -->
+  </footer>
+  <!-- End Footer -->
+
+</body>
+</html>

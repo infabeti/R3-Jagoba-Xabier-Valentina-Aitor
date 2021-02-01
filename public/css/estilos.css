@@ -1,0 +1,516 @@
+
+@font-face {
+    
+    font-family:London;
+    src: url(../fuentes/London.otf);
+}
+
+@font-face {
+    
+    font-family:Oliver;
+    src: url(../fuentes/Oliver.ttf);
+}
+
+@font-face {
+    
+    font-family:Champagne;
+    src: url(../fuentes/Champagne.ttf);
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    font-size: 18px;
+    color: #717171;
+}
+/*-----------HEADER--------------*/
+/* Para limpiar los floats */
+a {
+    color: #9c4d09;
+    text-decoration: none;
+}
+
+a:focus, a:hover{
+	color:#e09f66;
+	text-decoration: none;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+.menu_principal ul li a{
+    font-size: 18px;
+    line-height: 1.28;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    text-decoration: none;
+    color: #3a3a3a;
+    margin: 11px;
+}
+
+
+
+
+.contenedor ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.page-header {
+    border-bottom: 0px;
+}
+/*--------------CONTENIDO GENERAL---------------*/
+h1 {
+    font-family: London;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    color: #251714;
+}
+h1 span {
+    color: #96450c;
+}
+h2{
+    font-family: London;
+    color: #251714;
+    font-size: 60px;
+}
+.banner img {
+    width: 100%;
+    height: auto;
+}
+/*----------------CONTENIDO HOME--------------*/
+
+.container.contenido1 {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.texto1{
+    text-align: center;
+}
+.img-right img {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+
+.row.contenido2row {
+    background: #171717;
+    color: white;
+    padding: 73px 0px;
+}
+.container.contenido2 h2 {
+    color: white;
+}
+.cont_servicios h2 {
+    text-align: center;
+}
+.container.contenido3 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.destacadoCarta{
+	background-image: url(../imagenes/fondoCarta.jpg);
+	width: 100%;
+	/* height: 300px; */
+	background-attachment: fixed;
+}
+
+.btnRestaurantes {
+  height: 234px;
+  /*IMPORTANTE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnRestaurantes a{
+    border-radius: 50px;
+    background: #170a01;
+    width: 379px;
+    padding: 28px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.btnRestaurantes a:hover, .btn_menu:hover {
+    background: #562706;
+}
+.btn_bar div{
+    background: #170a01;
+    border-radius: 17px;
+    padding: 6px 10px;
+    color: wheat;
+    cursor: pointer;
+}
+.btn_bar {
+    padding: 10px;
+    text-align: center;
+}
+/*--------------ETIQUETA ARTICLE---------------*/
+.articulos  {
+    width: 31%;
+    display: inline-block;
+    margin: 10px;
+}
+.articulos article {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 10px;
+}
+p.titulo_art {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+}
+.articulos .icono {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    background: #E3C1A9;
+    font-size: 30px;
+    line-height: 2em !important;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.articulos .icono{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 47px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.arti1 .icono:before {
+    content: "\f000";
+}
+.arti2 .icono:before {
+    content: "\f0f4";
+}
+.arti3 .icono:before {
+    content: "\f0f5";
+}
+
+
+.articulos .icono:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    top: -1px;
+    bottom: -1px;
+    transition: .3s;
+    z-index: -1;
+    transform: translateX(-100%);
+    border-radius: 50%;
+    background: #643D25;
+}
+.articulos:hover .icono:after{
+    transform: translateX(0);
+}
+/*--------------SERVICIOS HOME----------------*/
+.servicio1, .servicio2, .servicio3 {
+    width: 31%;
+    display: inline-block;
+    box-shadow: 0 0 10px #cccccc;
+    overflow: hidden;
+    padding: 30px;
+    margin: 13px;
+    position: relative;
+    z-index: 1;
+    background: white;
+}
+.servicios:hover::after {
+    left: 0;
+}
+
+.servicios::after {
+    background: #4a280b;
+    content: "";
+    height: 100%;
+    left: -100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -ms-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    width: 100%;
+    z-index: -1;
+    color: white;
+}
+
+
+.servicios:hover h4,.servicios:hover p{
+    color:white
+}
+.no_margin {
+    background: url(../imagenes/repetir.png) repeat;
+    padding: 30px 0px 60px;
+}
+
+ .btn_menu{
+    border-radius: 50px;
+    background: #170a01;
+    width: 379px;
+    padding: 9px 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.btn_menu a {
+    color: white;
+}
+
+.btn_calcular{
+    border-radius: 50px;
+    background: #ad998a;
+    padding: 9px 20px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    /* width: 161px; */
+    display: inline-block;
+}
+.btn_calcular a {
+    color: white;
+}
+.calcular_aforo{
+    text-align: center;
+    padding: 50px 0px;
+}
+.btn_aforo{
+    border-radius: 50px;
+    background: #f5ddcd;
+    padding: 9px 20px;
+    text-align: center;
+    color: rgb(44, 23, 14);
+    font-size: 20px;
+    margin-top: 30px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    width: 200px;
+}
+ /*-----------CARTA-----------*/
+.group_menu {
+    background-color: #fbf3f3;
+    padding: 30px 20px 20px;
+    /* width: 49%; */
+    margin: 30px 0px 20px;
+    /* float: left; */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: #797979;
+}
+.main_title {
+    font-size: 28px;
+    line-height: 24px;
+    margin-bottom: 23px;
+}
+.menu_wrapper {
+    margin-bottom: 15px;
+}
+.menu_data {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    min-height: 26px;
+    list-style: none;
+}
+.menu_meal.with_price {
+    border-bottom: 2px dotted #c8c6c6;
+    margin-top: -12px;
+    padding-right: 50px;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.menu_meal.with_price .meal_name,  .menu_meal.with_price .price {
+    background-color: #fbf3f3;
+    position: relative;
+    top: 5px;
+}
+ .menu_meal.with_price .price {
+    font-weight: 400;
+    position: absolute;
+    text-align: right;
+    right: 0;
+    bottom: -6px;
+    top: auto;
+    padding: 0 0 1px 5px;
+}
+.columnaCarta {
+    margin-top: 50px;
+}
+.opinion{
+    display:none;
+}
+.carta{
+    display:none;
+}
+ /*-----------END CARTA-----------*/
+ /*-----------FORMULARIO DE CONTACTO-----------*/
+ .datos_contacto2{
+    text-align: center;
+}
+.datos_contacto2 ul li:before{
+   display: inline-block;
+   font: normal normal normal 14px/1 FontAwesome;
+   font-size: 25px;
+   text-rendering: auto;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   /* margin-right: 13px; */
+}
+
+.datos_contacto2 ul li:nth-child(1):before {
+   content: "\f041";
+   padding-right: 10px;
+   color: #8a4001;
+}
+.datos_contacto2 ul li:nth-child(2):before {
+   content: "\f095";
+   padding-right: 10px;
+   color: #105a6b;
+}
+.datos_contacto2 ul li {
+   margin-right: 40px;
+   font-size: 20px;
+}
+
+.datos_contacto2 h3 {
+   color: #633107;
+   font-size: 31px;
+}
+
+
+label {
+   display:block;
+   margin-top:20px;
+   letter-spacing:1px;
+   text-transform: uppercase;
+}
+
+.principal {
+   display:block;
+   margin:0 auto;
+   width:510px;
+   color: #666666;
+   font-family:Arial;
+}
+
+form {
+   margin:0 auto;
+   width: 800px;
+}
+
+input, textarea {
+   width: 100%;
+   height:27px;
+   background: #e6eff1;
+   border: 1px solid #e2e2e2;
+   border-radius: 10px;
+   padding:10px;
+   margin-top:5px;
+   font-size: 18px;
+   color: #020202;
+}
+
+textarea {
+   height:150px;
+}
+
+#submit {
+   width: 162px;
+   height: 53px;
+   border:none;
+   margin: 20px 0px;
+   cursor:pointer;
+   background: #482609;
+   color: white;
+}
+
+/*-----------END FORMULARIO DE CONTACTO-----------*/
+/*FOOTER*/
+footer {
+    background: #170e0d;
+    color: white;
+    padding-top: 50px;
+}
+
+.address ul li {
+    list-style: none;
+}
+
+.address ul {
+    padding: 0px;
+}
+
+.address ul h5 {
+    font-size: 18px;
+    color: #e3c1a9;
+}
+footer a {
+    color: #e3c1a9;
+}
+
+@media (max-width: 576px) { 
+
+	.servicio1, .servicio2, .servicio3 {
+		width: 100%;
+	} 
+}
+
+/*---------- FUNCIÓN MOSTRAR Y OCULTAR TEXTO ----------*/
+
+.oculto {
+	display: none; 
+	}
+		
+.visible {
+	display: inline;
+	}
+
+#info{
+	text-align:center;
+}
+
+#mostrar{
+	margin-left:550px;
+}
+
+#ocultar{
+	margin-left:550px;
+	
+}
+
+td.columCalculo {
+    width: 48%;
+}
