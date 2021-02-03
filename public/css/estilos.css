@@ -514,3 +514,15 @@ footer a {
 td.columCalculo {
     width: 48%;
 }
+
+div#datosCarta li {
+    list-style: none;
+    background: #fff;
+    color: gray;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+div#datosCarta  ul {
+    padding: 0px;
+}
